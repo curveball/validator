@@ -1,2 +1,49 @@
-// eslint-disable-next-line no-console
-console.log('Hello world!');
+import { UnprocessableEntity } from '@curveball/http-errors';
+import Ajv from 'ajv';
+import betterAjvErrors from 'better-ajv-errors';
+import fs from 'fs';
+
+const ajv = new Ajv({ jsonPointers: true });
+const schemas: string[] = [];
+
+function addSchemasForDir(path: string) {
+  const files = fs.readdirSync(path);
+  for (const file of files) {
+    const fullPath = path + '/' + file;
+    const stat = fs.statSync(fullPath);
+    if (stat.isDirectory()) {
+      addSchemasForDir(fullPath);
+    } else {
+      schemas.push(fullPath);
+    }
+  }
+}
+
+addSchemasForDir(__dirname + '/../node_modules/@badgateway/avondx-types/schemas');
+
+for (const schema of schemas) {
+
+  const parsed = JSON.parse(fs.readFileSync(schema, 'utf-8'));
+  // eslint-disable-next-line no-console
+  console.log('Loading schema ' + parsed['$id']);
+  ajv.addSchema(parsed);
+
+}
+
+export default function schemaValidate<T>(input: any, schema: string): T {
+
+  const result = ajv.validate(schema, input);
+  if (result) {
+    return input;
+  }
+
+  const error = ajv.errors;
+  const output = betterAjvErrors(schema, input, error, {format: 'js'});
+  if (!output) {
+    throw new Error('Unknown schema validation error');
+  }
+
+  // eslint-disable-next-line no-console
+  console.log(output);
+  throw new UnprocessableEntity(`JSON-Schema validation failed. ${output[0].error}`);
+}
