@@ -1,0 +1,72 @@
+{
+  "name": "@curveball/new-package",
+  "version": "0.0.1",
+  "description": "Description goes here",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepublishOnly": "make build",
+    "test": "make lint test",
+    "tsc": "tsc",
+    "start": "make start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/curveball/new-package.git"
+  },
+  "files": [
+    "package.json",
+    "README.md",
+    "dist",
+    "LICENSE"
+  ],
+  "keywords": [
+    "http",
+    "framework",
+    "nodejs",
+    "typescript",
+    "push",
+    "http2",
+    "curveball"
+  ],
+  "author": "Evert Pot (https://evertpot.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/curveball/new-package/issues"
+  },
+  "homepage": "https://github.com/curveball/new-package#readme",
+  "devDependencies": {
+    "@curveball/core": "^0.14.2",
+    "@types/chai": "^4.2.12",
+    "@types/mocha": "^8.0.3",
+    "@types/node": "^12.19.8",
+    "@types/sinon": "^9.0.7",
+    "@typescript-eslint/eslint-plugin": "^3.10.1",
+    "@typescript-eslint/parser": "^3.10.1",
+    "chai": "^4.2.0",
+    "eslint": "^7.10.0",
+    "mocha": "^8.1.3",
+    "nyc": "^15.1.0",
+    "sinon": "^9.1.0",
+    "ts-node": "^9.1.0",
+    "typescript": "^3.9.7"
+  },
+  "types": "dist/",
+  "nyc": {
+    "extension": [
+      ".ts"
+    ]
+  },
+  "peerDependencies": {
+    "@curveball/core": ">=0.11 <1"
+  },
+  "mocha": {
+    "require": "ts-node/register",
+    "recursive": true,
+    "extension": [
+      "ts",
+      "js",
+      "tsx"
+    ]
+  },
+  "dependencies": {}
+}
