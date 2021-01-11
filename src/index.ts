@@ -6,7 +6,7 @@ import fs from 'fs';
 const ajv = new Ajv({ jsonPointers: true });
 const schemas: string[] = [];
 
-function addSchemasForDir(path: string) {
+export function addSchemasForDir(path: string) {
   const files = fs.readdirSync(path);
   for (const file of files) {
     const fullPath = path + '/' + file;
@@ -19,8 +19,6 @@ function addSchemasForDir(path: string) {
   }
 }
 
-addSchemasForDir(__dirname + '/../node_modules/@badgateway/avondx-types/schemas');
-
 for (const schema of schemas) {
 
   const parsed = JSON.parse(fs.readFileSync(schema, 'utf-8'));
@@ -30,7 +28,7 @@ for (const schema of schemas) {
 
 }
 
-export default function schemaValidate<T>(input: any, schema: string): T {
+export function schemaValidate<T>(input: any, schema: string): T {
 
   const result = ajv.validate(schema, input);
   if (result) {
