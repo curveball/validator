@@ -20,9 +20,7 @@
         "lib": [
           "ES2019"
         ],
-        "declaration": true,
-
-        "esModuleInterop": true
+        "declaration": true
     },
     "include": [
         "src/**/*"
