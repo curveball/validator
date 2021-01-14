@@ -1,7 +1,7 @@
 import { UnprocessableEntity } from '@curveball/http-errors';
-import Ajv from 'ajv';
-import betterAjvErrors from 'better-ajv-errors';
-import fs from 'fs';
+import * as Ajv from 'ajv';
+import * as betterAjvErrors from 'better-ajv-errors';
+import * as fs from 'fs';
 
 const ajv = new Ajv({ jsonPointers: true });
 const schemas: string[] = [];
