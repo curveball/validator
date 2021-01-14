@@ -3,7 +3,7 @@ import Ajv from 'ajv';
 import betterAjvErrors from 'better-ajv-errors';
 import fs from 'fs';
 
-const ajv = new Ajv({ jsonPointers: true });
+const ajv = new Ajv();
 
 export function addSchemasForDir(path: string) {
   const schemas: string[] = [];
