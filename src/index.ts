@@ -1,12 +1,12 @@
 import { UnprocessableEntity } from '@curveball/http-errors';
-import * as Ajv from 'ajv';
-import * as betterAjvErrors from 'better-ajv-errors';
-import * as fs from 'fs';
+import Ajv from 'ajv';
+import betterAjvErrors from 'better-ajv-errors';
+import fs from 'fs';
 
 const ajv = new Ajv({ jsonPointers: true });
-const schemas: string[] = [];
 
 export function addSchemasForDir(path: string) {
+  const schemas: string[] = [];
   const files = fs.readdirSync(path);
   for (const file of files) {
     const fullPath = path + '/' + file;
@@ -17,15 +17,12 @@ export function addSchemasForDir(path: string) {
       schemas.push(fullPath);
     }
   }
-}
-
-for (const schema of schemas) {
-
-  const parsed = JSON.parse(fs.readFileSync(schema, 'utf-8'));
-  // eslint-disable-next-line no-console
-  console.log('Loading schema ' + parsed['$id']);
-  ajv.addSchema(parsed);
-
+  for (const schema of schemas) {
+    const parsed = JSON.parse(fs.readFileSync(schema, 'utf-8'));
+    // eslint-disable-next-line no-console
+    console.log('Loading schema ' + parsed['$id']);
+    ajv.addSchema(parsed);
+  }
 }
 
 export function schemaValidate<T>(input: any, schema: string): T {
