@@ -1,6 +1,6 @@
 {
   "name": "@badgateway/schema-api",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Schema API for Bad Gateway",
   "main": "dist/index.js",
   "scripts": {
