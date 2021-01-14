@@ -29,7 +29,7 @@
     "@curveball/core": "^0.15.0",
     "@types/chai": "^4.2.12",
     "@types/mocha": "^8.0.3",
-    "@types/node": "^14.14.20",
+    "@types/node": "^14.14.21",
     "@types/sinon": "^9.0.7",
     "@typescript-eslint/eslint-plugin": "^4.13.0",
     "@typescript-eslint/parser": "^4.13.0",
@@ -61,7 +61,7 @@
   },
   "dependencies": {
     "@curveball/http-errors": "^0.3.0",
-    "ajv": "^6.12.6",
+    "ajv": "^7.0.3",
     "better-ajv-errors": "^0.7.0"
   },
   "publishConfig": {
