@@ -5,6 +5,7 @@ import fs from 'fs';
 import addFormats from 'ajv-formats';
 
 const ajv = new Ajv2019();
+addFormats(ajv);
 
 export function addSchemasForDir(path: string) {
   const schemas: string[] = [];
@@ -26,13 +27,7 @@ export function addSchemasForDir(path: string) {
   }
 }
 
-let executed = false;
-
 export function schemaValidate<T>(input: any, schema: string): T {
-  if (!executed) {
-    executed = true;
-    addFormats(ajv);
-  }
   const result = ajv.validate(schema, input);
   if (result) {
     return input;
