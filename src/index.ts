@@ -2,7 +2,7 @@ import { UnprocessableEntity } from '@curveball/http-errors';
 import Ajv2019 from 'ajv/dist/2019';
 import betterAjvErrors from 'better-ajv-errors';
 import fs from 'fs';
-import addFormats from "ajv-formats"
+import addFormats from 'ajv-formats';
 
 const ajv = new Ajv2019();
 
@@ -31,7 +31,7 @@ let executed = false;
 export function schemaValidate<T>(input: any, schema: string): T {
   if (!executed) {
     executed = true;
-    addFormats(ajv)
+    addFormats(ajv);
   }
   const result = ajv.validate(schema, input);
   if (result) {
