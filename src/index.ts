@@ -26,8 +26,13 @@ export function addSchemasForDir(path: string) {
   }
 }
 
+let executed = false;
+
 export function schemaValidate<T>(input: any, schema: string): T {
-  addFormats(ajv)
+  if (!executed) {
+    executed = true;
+    addFormats(ajv)
+  }
   const result = ajv.validate(schema, input);
   if (result) {
     return input;
