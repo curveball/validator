@@ -2,6 +2,7 @@ import { UnprocessableEntity } from '@curveball/http-errors';
 import Ajv from 'ajv';
 import betterAjvErrors from 'better-ajv-errors';
 import fs from 'fs';
+import addFormats from "ajv-formats"
 
 const ajv = new Ajv();
 
@@ -26,7 +27,7 @@ export function addSchemasForDir(path: string) {
 }
 
 export function schemaValidate<T>(input: any, schema: string): T {
-
+  addFormats(ajv);
   const result = ajv.validate(schema, input);
   if (result) {
     return input;

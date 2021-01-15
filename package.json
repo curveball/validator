@@ -62,6 +62,7 @@
   "dependencies": {
     "@curveball/http-errors": "^0.3.0",
     "ajv": "^7.0.3",
+    "ajv-formats": "^1.5.1",
     "better-ajv-errors": "^0.7.0"
   },
   "publishConfig": {
