@@ -5,6 +5,7 @@ import fs from 'fs';
 import addFormats from 'ajv-formats';
 
 const ajv = new Ajv2019();
+
 addFormats(ajv);
 
 export function addSchemasForDir(path: string) {
