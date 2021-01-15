@@ -1,9 +1,9 @@
 import { UnprocessableEntity } from '@curveball/http-errors';
-import Ajv2019 from "ajv/dist/2019"
+import Ajv2019 from 'ajv/dist/2019';
 import betterAjvErrors from 'better-ajv-errors';
 import fs from 'fs';
 
-const ajv = new Ajv2019()
+const ajv = new Ajv2019();
 
 export function addSchemasForDir(path: string) {
   const schemas: string[] = [];
