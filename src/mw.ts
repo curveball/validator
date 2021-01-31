@@ -13,7 +13,8 @@ export default function(schemaPath: string): Middleware {
 
   const schemas = findSchemas(schemaPath);
   for (const schema of schemas) {
-    console.log('Loading schema ' + schema.id);
+    // eslint-disable-next-line no-console
+    console.log('📐 Loading schema ' + schema.id);
     ajv.addSchema(schema.schema);
   }
 
@@ -25,7 +26,7 @@ export default function(schemaPath: string): Middleware {
     ctx.request.validate = (schemaId: string) => {
       const result = ajv.validate(schemaId, ctx.request.body);
       if (result) {
-        return; 
+        return;
       }
 
       const error = ajv.errors;
@@ -59,6 +60,6 @@ export default function(schemaPath: string): Middleware {
 
     await next();
 
-  }
+  };
 
 }

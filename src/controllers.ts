@@ -19,7 +19,7 @@ export class SchemaCollectionController extends Controller {
           return {
             href: '/schema/' + schema.path,
             title: schema.description,
-          }
+          };
         }),
       }
     };
@@ -52,7 +52,7 @@ export class SchemaController extends Controller {
     });
 
     ctx.response.body = schema.schema;
-  
+
   }
 
 }

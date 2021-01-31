@@ -41,7 +41,7 @@ export function addSchemasForDir(path: string): void {
 export function schemaValidate<T>(input: any, schema: string): T {
   const result = ajv.validate(schema, input);
   if (result) {
-    return input; 
+    return input;
   }
 
   const error = ajv.errors;
