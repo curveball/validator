@@ -1,13 +1,19 @@
 Changelog
 =========
 
-0.5.0 (2021-01-31)
+0.6.0 (2021-01-31)
 ------------------
 
 * Rewrote parts of the library to behave more like a middleware. The validator
   can now be found in `ctx.request.validate()`.
 * The middleware automatically creates a 'schema collection', mounted under
   `/schema`, and also creates a link from the home document for easy discovery.
+
+
+0.5.0 (2021-01-31)
+------------------
+
+* Validator can now run more than once.
 
 
 0.4.0 (2021-01-14)
@@ -31,7 +37,7 @@ Changelog
 0.1.0 (2021-01-14)
 ------------------
 
-* Bug: Validation only worked once.
+* Bug: Validation didn't work.
 
 
 0.0.3 (2021-01-14)
