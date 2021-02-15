@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.7.0 (2021-??-??)
+------------------
+
+* Now an official Curveball package.
+* Renamed from `@badgateway/schema-api` to `@curveball/validator`.
+
+
 0.6.1 (2021-02-01)
 ------------------
 

@@ -1,7 +1,7 @@
 {
-  "name": "@badgateway/schema-api",
-  "version": "0.6.1",
-  "description": "Schema API for Bad Gateway",
+  "name": "@curveball/validator",
+  "version": "0.7.0",
+  "description": "Validation system for Curveball",
   "main": "dist/index.js",
   "scripts": {
     "prepublishOnly": "make build",
@@ -22,11 +22,11 @@
   ],
   "author": "Evert Pot (https://evertpot.com/)",
   "bugs": {
-    "url": "https://github.com/badgateway/schema-api/issues"
+    "url": "https://github.com/curveball/validation/issues"
   },
-  "homepage": "https://github.com/badgateway/schema-api#readme",
+  "homepage": "https://github.com/curveball/validation#readme",
   "devDependencies": {
-    "@curveball/core": "^0.15.0",
+    "@curveball/core": "^0.16.1",
     "@types/chai": "^4.2.12",
     "@types/mocha": "^8.0.3",
     "@types/node": "^14.14.22",
@@ -48,7 +48,7 @@
     ]
   },
   "peerDependencies": {
-    "@curveball/core": ">=0.11 <1"
+    "@curveball/core": ">=0.16.1 <1"
   },
   "mocha": {
     "require": "ts-node/register",
@@ -66,8 +66,5 @@
     "ajv": "^7.0.4",
     "ajv-formats": "^1.5.1",
     "better-ajv-errors": "^0.7.0"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   }
 }
