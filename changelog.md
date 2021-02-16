@@ -6,6 +6,7 @@ Changelog
 
 * Now an official Curveball package.
 * Renamed from `@badgateway/schema-api` to `@curveball/validator`.
+* Remove stateful API (`addSchemasForDir`, `schemaValidate` functions).
 
 
 0.6.1 (2021-02-01)
