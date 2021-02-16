@@ -40,16 +40,6 @@ export default function(schemaPath: string): Middleware {
       throw new UnprocessableEntity(`JSON-Schema validation failed. ${output[0].error}`);
     };
 
-    if (ctx.path === '/') {
-      // If we're on the home document, add a link to the
-      // schema collection.
-      ctx.response.links.add({
-        rel: 'schema-collection',
-        href:'/schema',
-        title: 'JSON Schema definitions',
-      });
-    }
-
     if (ctx.request.path === '/schema') {
       return schemaCollectionController.dispatch(ctx);
       return;
@@ -59,6 +49,16 @@ export default function(schemaPath: string): Middleware {
     }
 
     await next();
+
+    if (ctx.path === '/') {
+      // If we're on the home document, add a link to the
+      // schema collection.
+      ctx.response.links.add({
+        rel: 'schema-collection',
+        href:'/schema',
+        title: 'JSON Schema definitions',
+      });
+    }
 
   };
 
