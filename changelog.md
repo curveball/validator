@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.7.0 (2021-??-??)
+0.7.0 (2021-02-15)
 ------------------
 
 * Now an official Curveball package.
