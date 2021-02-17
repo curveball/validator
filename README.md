@@ -15,7 +15,7 @@ by clients.
 Installation
 ------------
 
-    npm install @curveball/validation
+    npm install @curveball/validator
 
 
 Getting started
