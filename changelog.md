@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.7.1 (2021-04-28)
+------------------
+
+* Add an option to *not* automatically add a HTTP Link header.
+
+
 0.7.0 (2021-02-15)
 ------------------
 
