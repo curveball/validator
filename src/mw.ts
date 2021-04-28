@@ -6,12 +6,31 @@ import * as betterAjvErrors from 'better-ajv-errors';
 import { UnprocessableEntity } from '@curveball/http-errors';
 import { SchemaCollectionController, SchemaController } from './controllers';
 
-export default function(schemaPath: string): Middleware {
+type Options = {
+  /**
+   * Path to schema directory.
+   *
+   * The validator will recursively scan and parse every file in this directory
+   */
+  schemaPath: string;
+
+  /**
+   * By default the middleware will create a `Link` on the "/" route to point
+   * to a collection of schemas.
+   *
+   * If this is turned off, that link will not be added.
+   */
+  noLink?: boolean;
+}
+
+
+export default function(options: string|Options): Middleware {
 
   const ajv = new Ajv2019();
   addFormats(ajv);
 
-  const schemas = findSchemas(schemaPath);
+  const trueOptions: Options = typeof options === 'string' ? { schemaPath: options }: options;
+  const schemas = findSchemas(trueOptions.schemaPath);
   for (const schema of schemas) {
     // eslint-disable-next-line no-console
     console.log('📐 Loading schema ' + schema.id);
@@ -50,7 +69,7 @@ export default function(schemaPath: string): Middleware {
 
     await next();
 
-    if (ctx.path === '/') {
+    if (!trueOptions.noLink && ctx.path === '/') {
       // If we're on the home document, add a link to the
       // schema collection.
       ctx.response.links.add({
