@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/badgateway/schema-api.git"
+    "url": "git+https://github.com/curveball/validatori.git"
   },
   "files": [
     "package.json",
@@ -22,9 +22,9 @@
   ],
   "author": "Evert Pot (https://evertpot.com/)",
   "bugs": {
-    "url": "https://github.com/curveball/validation/issues"
+    "url": "https://github.com/curveball/validator/issues"
   },
-  "homepage": "https://github.com/curveball/validation#readme",
+  "homepage": "https://github.com/curveball/validator#readme",
   "devDependencies": {
     "@curveball/core": "^0.16.1",
     "@types/chai": "^4.2.15",
