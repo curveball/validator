@@ -1,6 +1,6 @@
 {
   "name": "@curveball/validator",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "Validation system for Curveball",
   "main": "dist/index.js",
   "scripts": {
@@ -29,15 +29,13 @@
     "@curveball/core": "^0.16.1",
     "@types/chai": "^4.2.15",
     "@types/mocha": "^8.0.3",
-    "@types/node": "^14.14.28",
-    "@types/sinon": "^9.0.7",
-    "@typescript-eslint/eslint-plugin": "^4.15.1",
-    "@typescript-eslint/parser": "^4.15.1",
+    "@types/node": "^12.20.13",
+    "@typescript-eslint/eslint-plugin": "^4.24.0",
+    "@typescript-eslint/parser": "^4.24.0",
     "chai": "^4.3.0",
-    "eslint": "^7.20.0",
+    "eslint": "^7.26.0",
     "mocha": "^8.3.0",
     "nyc": "^15.1.0",
-    "sinon": "^9.2.4",
     "ts-node": "^9.1.0",
     "typescript": "^4.1.5"
   },
@@ -61,10 +59,10 @@
   },
   "dependencies": {
     "@curveball/controller": "^0.3.0",
-    "@curveball/http-errors": "^0.3.0",
+    "@curveball/http-errors": "^0.4.0",
     "@curveball/links": "^0.1.5",
-    "ajv": "^7.1.1",
-    "ajv-formats": "^1.5.1",
+    "ajv": "^8.4.0",
+    "ajv-formats": "^2.1.0",
     "better-ajv-errors": "^0.7.0"
   }
 }
