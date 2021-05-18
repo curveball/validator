@@ -7,7 +7,7 @@ Changelog
 * Add an option to *not* automatically add a HTTP Link header.
 
 
-0.7.0 (2021-02-15)
+0.8.0 (2021-02-15)
 ------------------
 
 * Now an official Curveball package.
