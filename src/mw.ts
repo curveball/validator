@@ -2,7 +2,7 @@ import { Middleware } from '@curveball/core';
 import Ajv2019 from 'ajv/dist/2019';
 import addFormats from 'ajv-formats';
 import { findSchemas } from './util';
-import * as betterAjvErrors from 'better-ajv-errors';
+import * as betterAjvErrors from '@stoplight/better-ajv-errors';
 import { UnprocessableEntity } from '@curveball/http-errors';
 import { SchemaCollectionController, SchemaController } from './controllers';
 
@@ -48,8 +48,10 @@ export default function(options: string|Options): Middleware {
         return;
       }
 
-      const error = ajv.errors;
-      const output = betterAjvErrors(schemaId, ctx.request.body, error, {format: 'js'});
+      const output = betterAjvErrors(schemaId, ajv.errors, {
+        propertyPath: [],
+        targetValue: ctx.request.body
+      });
       if (!output) {
         throw new Error('Unknown schema validation error');
       }
