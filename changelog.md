@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.8.2 (2021-05-28)
+------------------
+
+* Switch from `better-ajv-errors` to `@stoplight/better-ajv-errors`. The
+  former no longer appears to be maintained.
+
+
 0.8.1 (2021-05-18)
 ------------------
 
