@@ -1,6 +1,6 @@
 {
   "name": "@curveball/validator",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "description": "Validation system for Curveball",
   "main": "dist/index.js",
   "scripts": {
