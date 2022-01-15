@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.8.3 (2022-01-15)
+------------------
+
+* Update all dependencies, fixing a potential upstream security bug
+  in `json-pointer`.
+
+
 0.8.2 (2021-05-28)
 ------------------
 
