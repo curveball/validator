@@ -36,7 +36,6 @@ export default function(options: string|Options): Middleware {
   addFormats(ajv);
 
   const trueOptions: Options = typeof options === 'string' ? { schemaPath: options }: options;
-
   const schemas = findSchemas(trueOptions.schemaPath);
   for (const schema of schemas) {
     if (!trueOptions.quiet) {
