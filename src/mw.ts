@@ -21,6 +21,12 @@ type Options = {
    * If this is turned off, that link will not be added.
    */
   noLink?: boolean;
+
+  /**
+   * By default the middleware prints loaded schemas, and other helpful
+   * output. Set this to false to disable.
+   */
+  verbose?: boolean
 }
 
 
@@ -30,10 +36,14 @@ export default function(options: string|Options): Middleware {
   addFormats(ajv);
 
   const trueOptions: Options = typeof options === 'string' ? { schemaPath: options }: options;
+  trueOptions.verbose = trueOptions.verbose === false ? false : true
+
   const schemas = findSchemas(trueOptions.schemaPath);
   for (const schema of schemas) {
-    // eslint-disable-next-line no-console
-    console.log('📐 Loading schema ' + schema.id);
+    if (trueOptions.verbose) {
+      // eslint-disable-next-line no-console
+      console.log('📐 Loading schema ' + schema.id);
+    }
     ajv.addSchema(schema.schema);
   }
 
@@ -55,9 +65,10 @@ export default function(options: string|Options): Middleware {
       if (!output) {
         throw new Error('Unknown schema validation error');
       }
-
-      // eslint-disable-next-line no-console
-      console.log(output);
+      if (trueOptions.verbose) {
+        // eslint-disable-next-line no-console
+        console.log(output);
+      }
       throw new UnprocessableEntity(`JSON-Schema validation failed. ${output[0].error}`);
     };
 
