@@ -24,9 +24,9 @@ type Options = {
 
   /**
    * By default the middleware prints loaded schemas, and other helpful
-   * output. Set this to false to disable.
+   * output. Set this to true to disable.
    */
-  verbose?: boolean
+  quiet?: boolean
 }
 
 
@@ -36,11 +36,10 @@ export default function(options: string|Options): Middleware {
   addFormats(ajv);
 
   const trueOptions: Options = typeof options === 'string' ? { schemaPath: options }: options;
-  trueOptions.verbose = trueOptions.verbose === false ? false : true;
 
   const schemas = findSchemas(trueOptions.schemaPath);
   for (const schema of schemas) {
-    if (trueOptions.verbose) {
+    if (!trueOptions.quiet) {
       // eslint-disable-next-line no-console
       console.log('📐 Loading schema ' + schema.id);
     }
@@ -65,7 +64,7 @@ export default function(options: string|Options): Middleware {
       if (!output) {
         throw new Error('Unknown schema validation error');
       }
-      if (trueOptions.verbose) {
+      if (!trueOptions.quiet) {
         // eslint-disable-next-line no-console
         console.log(output);
       }
