@@ -1,6 +1,6 @@
 {
   "name": "@curveball/validator",
-  "version": "0.8.3",
+  "version": "0.8.4",
   "description": "Validation system for Curveball",
   "main": "dist/index.js",
   "scripts": {
@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/curveball/validator#readme",
   "devDependencies": {
-    "@curveball/core": "^0.16.1",
+    "@curveball/core": "^0.17",
     "@types/chai": "^4.2.15",
     "@types/mocha": "^9.0.0",
     "@types/node": "^12.20.13",

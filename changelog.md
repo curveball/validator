@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.8.4 (2022-03-14)
+-----------------
+
+* Add a `quiet` setting to suppress all logging. (@defrex)
+
+
 0.8.3 (2022-01-15)
 ------------------
 
