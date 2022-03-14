@@ -26,7 +26,7 @@ type Options = {
    * By default the middleware prints loaded schemas, and other helpful
    * output. Set this to true to disable.
    */
-  quiet?: boolean
+  quiet?: boolean;
 }
 
 
