@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/curveball/validator#readme",
   "devDependencies": {
+    "@curveball/bodyparser": "^0.4.14",
     "@curveball/core": "^0.17",
     "@types/chai": "^4.2.15",
     "@types/mocha": "^9.0.0",

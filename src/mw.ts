@@ -50,6 +50,9 @@ export default function(options: string|Options): Middleware {
 
   return async (ctx, next) => {
 
+    ctx.ajv = ajv;
+    ctx.schemas = schemas;
+
     ctx.request.validate = (schemaId: string) => {
       const result = ajv.validate(schemaId, ctx.request.body);
       if (result) {
@@ -80,7 +83,7 @@ export default function(options: string|Options): Middleware {
 
     await next();
 
-    if (!trueOptions.noLink && ctx.path === '/') {
+    if (!trueOptions.noLink && ctx.path === '/' && ctx.response.links !== undefined) {
       // If we're on the home document, add a link to the
       // schema collection.
       ctx.response.links.add({
