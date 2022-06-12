@@ -11,6 +11,7 @@ In addition it will also create a new route `/schemas`, which is a collection
 where API clients can find all JSON schemas, so they may be re-used
 by clients.
 
+The package uses [ajv][2] under the hood.
 
 Installation
 ------------
@@ -68,7 +69,6 @@ app.use(
     // Will throw an error if validation failed
     ctx.request.validate('https://my-api.example.com/schemas/article.json');
 
-
   })
 );
 ```
@@ -94,4 +94,13 @@ app.use(
 By default `ctx.request.body` is typed `unknown`, but calling Validator with
 a Type pararameter will 'assert it' as that type if validation is successful.
 
+
+### Direct access to AJV
+
+This middleware also exposes a `ctx.ajv` property. This property lets you
+directly use [ajv][2].
+
+This AJV instance has all the json schemas pre-compiled.
+
 [1]: https://www.npmjs.com/package/json-schema-to-typescript
+[2]: https://ajv.js.org/
