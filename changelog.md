@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.9.0 (2022-06-11)
+------------------
+
+* The plugin now creates a `.schemas` and `.ajv` properties on `Context`,
+  to make it easy to access the ajv instance from other contexts.
+
+
 0.8.4 (2022-03-14)
 -----------------
 
