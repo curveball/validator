@@ -1,5 +1,5 @@
 import { Controller } from '@curveball/controller';
-import { Context } from '@curveball/core';
+import { Context } from '@curveball/kernel';
 import { SchemaInfo } from './types';
 import { NotFound } from '@curveball/http-errors';
 

@@ -1,8 +1,8 @@
-import '@curveball/core';
+import '@curveball/kernel';
 import Ajv from 'ajv';
 import { SchemaInfo } from './types';
 
-declare module '@curveball/core' {
+declare module '@curveball/kernel' {
 
   interface Request {
 
