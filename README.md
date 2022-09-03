@@ -53,7 +53,7 @@ the middleware:
 
 
 ```typescript
-import { Application } from '@curveball/core';
+import { Application } from '@curveball/kernel';
 import validator from '@curveball/validator';
 
 const app = new Application();

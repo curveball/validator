@@ -1,4 +1,4 @@
-import { Application, Context } from '@curveball/core';
+import { Application, Context } from '@curveball/kernel';
 import validator from '../src';
 import { expect } from 'chai';
 import bodyParser from '@curveball/bodyparser';

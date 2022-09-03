@@ -1,4 +1,4 @@
-import { Middleware } from '@curveball/core';
+import { Middleware } from '@curveball/kernel';
 import Ajv2019 from 'ajv/dist/2019';
 import addFormats from 'ajv-formats';
 import { findSchemas } from './util';
