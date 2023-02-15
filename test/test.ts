@@ -1,5 +1,5 @@
 import { Application, Context } from '@curveball/kernel';
-import validator from '../src';
+import validator from '../src/index.js';
 import { expect } from 'chai';
 import bodyParser from '@curveball/bodyparser';
 
@@ -54,7 +54,7 @@ function getApp() {
   const app = new Application();
   app.use(bodyParser());
   app.use(validator({
-    schemaPath: __dirname + '/schemas',
+    schemaPath: 'test/schemas',
     quiet: true,
   }));
   return app;

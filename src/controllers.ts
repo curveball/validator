@@ -1,6 +1,6 @@
 import { Controller } from '@curveball/controller';
 import { Context } from '@curveball/kernel';
-import { SchemaInfo } from './types';
+import { SchemaInfo } from './types.js';
 import { NotFound } from '@curveball/http-errors';
 
 export class SchemaCollectionController extends Controller {

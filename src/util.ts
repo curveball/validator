@@ -1,5 +1,5 @@
-import * as fs from 'fs';
-import { SchemaInfo } from './types';
+import * as fs from 'node:fs';
+import { SchemaInfo } from './types.js';
 
 export function findSchemas(path: string, localPrefix: string = ''): SchemaInfo[] {
   const schemas: SchemaInfo[] = [];

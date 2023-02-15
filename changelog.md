@@ -1,8 +1,15 @@
 Changelog
 =========
 
+0.11.0 (????-??-??)
+-------------------
+
+* This package now supports ESM and CommonJS modules.
+* No longer supports Node 14. Please use Node 16 or higher.
+
+
 0.10.0 (2022-09-03)
-------------------
+-------------------
 
 * Upgraded from `@curveball/core` to `@curveball/kernel`.
 
@@ -10,12 +17,12 @@ Changelog
 0.9.0 (2022-06-11)
 ------------------
 
-* The plugin now creates a `.schemas` and `.ajv` properties on `Context`,
-  to make it easy to access the ajv instance from other contexts.
+* The plugin now creates a `.schemas` and `.ajv` properties on `Context`, to
+  make it easy to access the ajv instance from other contexts.
 
 
 0.8.4 (2022-03-14)
------------------
+------------------
 
 * Add a `quiet` setting to suppress all logging. (@defrex)
 
@@ -23,15 +30,15 @@ Changelog
 0.8.3 (2022-01-15)
 ------------------
 
-* Update all dependencies, fixing a potential upstream security bug
-  in `json-pointer`.
+* Update all dependencies, fixing a potential upstream security bug in
+  `json-pointer`.
 
 
 0.8.2 (2021-05-28)
 ------------------
 
-* Switch from `better-ajv-errors` to `@stoplight/better-ajv-errors`. The
-  former no longer appears to be maintained.
+* Switch from `better-ajv-errors` to `@stoplight/better-ajv-errors`. The former
+  no longer appears to be maintained.
 
 
 0.8.1 (2021-05-18)

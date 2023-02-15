@@ -1,6 +1,6 @@
 import '@curveball/kernel';
 import Ajv from 'ajv';
-import { SchemaInfo } from './types';
+import { SchemaInfo } from './types.js';
 
 declare module '@curveball/kernel' {
 

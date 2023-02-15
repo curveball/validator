@@ -1,4 +1,4 @@
-import './declarations';
+import './declarations.js';
 import '@curveball/links';
 
-export { default as default } from './mw';
+export { default as default } from './mw.js';
