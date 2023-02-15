@@ -54,7 +54,7 @@ function getApp() {
   const app = new Application();
   app.use(bodyParser());
   app.use(validator({
-    schemaPath: __dirname + '/schemas',
+    schemaPath: 'test/schemas',
     quiet: true,
   }));
   return app;

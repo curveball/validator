@@ -6,7 +6,10 @@ import * as betterAjvErrors from '@stoplight/better-ajv-errors';
 import { UnprocessableEntity } from '@curveball/http-errors';
 import { SchemaCollectionController, SchemaController } from './controllers.js';
 
+// ESM shenanigans
 const Ajv2019 = Ajv2019Imp.default ?? Ajv2019Imp;
+// @ts-expect-error
+const bae = betterAjvErrors.default ?? betterAjvErrors;
 
 type Options = {
   /**
@@ -61,7 +64,7 @@ export default function(options: string|Options): Middleware {
         return;
       }
 
-      const output = betterAjvErrors(schemaId, ajv.errors, {
+      const output = bae(schemaId, ajv.errors, {
         propertyPath: [],
         targetValue: ctx.request.body
       });
