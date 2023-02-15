@@ -1,5 +1,5 @@
 import { Application, Context } from '@curveball/kernel';
-import validator from '../src';
+import validator from '../src/index.js';
 import { expect } from 'chai';
 import bodyParser from '@curveball/bodyparser';
 
