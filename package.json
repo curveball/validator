@@ -2,63 +2,29 @@
   "name": "@curveball/validator",
   "version": "0.10.0",
   "description": "Validation system for Curveball",
-  "main": "dist/index.js",
+  "type": "module",
+  "exports": {
+    "require": "./cjs/index.js",
+    "import": "./esm/index.js"
+  },
+  "main": "cjs/index.js",
+  "homepage": "https://github.com/curveball/validator#readme",
+  "bugs": {
+    "url": "https://github.com/curveball/validator/issues"
+  },
+  "author": "Evert Pot (https://evertpot.com/)",
+  "license": "MIT",
   "scripts": {
     "prepublishOnly": "make build",
     "test": "make test",
     "lint": "make lint",
+    "fix": "make fix",
     "tsc": "tsc",
     "start": "make start"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/curveball/validator.git"
-  },
-  "files": [
-    "package.json",
-    "README.md",
-    "dist",
-    "LICENSE",
-    "src"
-  ],
-  "author": "Evert Pot (https://evertpot.com/)",
-  "bugs": {
-    "url": "https://github.com/curveball/validator/issues"
-  },
-  "homepage": "https://github.com/curveball/validator#readme",
-  "devDependencies": {
-    "@curveball/bodyparser": "^0.5.0",
-    "@curveball/kernel": "^0.20.0",
-    "@types/chai": "^4.2.15",
-    "@types/mocha": "^9.1.1",
-    "@types/node": "^14.18.26",
-    "@typescript-eslint/eslint-plugin": "^5.36.1",
-    "@typescript-eslint/parser": "^5.36.1",
-    "chai": "^4.3.0",
-    "eslint": "^8.23.0",
-    "mocha": "^10.0.0",
-    "nyc": "^15.1.0",
-    "sinon": "^14.0.0",
-    "ts-node": "^10.9.1",
-    "typescript": "^4.1.5"
-  },
-  "types": "dist/",
-  "nyc": {
-    "extension": [
-      ".ts"
-    ]
-  },
-  "engines": {
-    "node": ">= 14"
-  },
-  "mocha": {
-    "require": "ts-node/register",
-    "recursive": true,
-    "extension": [
-      "ts",
-      "js",
-      "tsx"
-    ]
   },
   "dependencies": {
     "@curveball/controller": "^0.4.0",
@@ -69,6 +35,49 @@
     "ajv-formats": "^2.1.0"
   },
   "peerDependencies": {
-    "@curveball/kernel": ">=0.20.0 <1"
+    "@curveball/kernel": ">=0.21.0 <1"
+  },
+  "devDependencies": {
+    "@curveball/bodyparser": "^0.5.0",
+    "@curveball/kernel": "^0.21.0",
+    "@types/chai": "^4.2.15",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^16.18.12",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
+    "chai": "^4.3.0",
+    "eslint": "^8.23.0",
+    "mocha": "^10.2.0",
+    "nyc": "^15.1.0",
+    "sinon": "^15.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.1.5"
+  },
+  "engines": {
+    "node": ">= 16"
+  },
+  "files": [
+    "package.json",
+    "README.md",
+    "esm",
+    "cjs",
+    "LICENSE",
+    "src"
+  ],
+  "mocha": {
+    "loader": [
+      "ts-node/esm"
+    ],
+    "recursive": true,
+    "extension": [
+      "ts",
+      "js",
+      "tsx"
+    ]
+  },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ]
   }
 }
