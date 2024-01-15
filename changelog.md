@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.11.0 (????-??-??)
+0.11.0 (2023-02-15)
 -------------------
 
 * This package now supports ESM and CommonJS modules.
