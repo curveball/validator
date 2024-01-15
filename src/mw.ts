@@ -1,15 +1,14 @@
 import { Middleware } from '@curveball/kernel';
-import * as Ajv2019Imp from 'ajv/dist/2019.js';
-import addFormats from 'ajv-formats';
+import AjvImport from 'ajv/dist/2019.js';
+import addFormatsImp from 'ajv-formats';
 import { findSchemas } from './util.js';
-import * as betterAjvErrors from '@stoplight/better-ajv-errors';
+import bae from '@stoplight/better-ajv-errors';
 import { UnprocessableEntity } from '@curveball/http-errors';
 import { SchemaCollectionController, SchemaController } from './controllers.js';
 
 // ESM shenanigans
-const Ajv2019 = Ajv2019Imp.default ?? Ajv2019Imp;
-// @ts-expect-error
-const bae = betterAjvErrors.default ?? betterAjvErrors;
+const Ajv = AjvImport.default;
+const addFormats = addFormatsImp.default;
 
 type Options = {
   /**
@@ -37,7 +36,7 @@ type Options = {
 
 export default function(options: string|Options): Middleware {
 
-  const ajv = new Ajv2019();
+  const ajv = new Ajv();
   addFormats(ajv);
 
   const trueOptions: Options = typeof options === 'string' ? { schemaPath: options }: options;

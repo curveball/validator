@@ -1,5 +1,5 @@
 import '@curveball/kernel';
-import Ajv from 'ajv';
+import Ajv from 'ajv/dist/2019.js';
 import { SchemaInfo } from './types.js';
 
 declare module '@curveball/kernel' {
@@ -25,7 +25,7 @@ declare module '@curveball/kernel' {
      *
      * This has all the loaded schemas precompiled.
      */
-    ajv: Ajv;
+    ajv: Ajv.default;
 
   }
 
